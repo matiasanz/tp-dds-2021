@@ -1,0 +1,36 @@
+{{#partial "titulo"}}
+    <title>Organizaciones</title>
+{{/partial}}
+
+
+{{#partial "sources"}}
+    <link href="/org_styles.css" rel="stylesheet">
+{{/partial}}
+
+{{#partial "contenido"}}
+    <h1>¡Bienvenidos!</h1>
+
+    <div id="columnas">
+        <section id="orgs">
+            <h2>Organizaciones</h2>
+
+            {{#if nombreOrgActual}}
+                <h3>Actualmente esta operando con <span>{{nombreOrgActual}}</span></h3>
+            {{/if}}
+
+            <h3>Seleccione con cuál desea operar</h3>
+            <div id="columnasOrg">
+                <ul id="divisionUl">
+                    {{#organizaciones}}
+                        <button class="btn-org" onclick="window.location.href = '/organizaciones/{{id}}'">
+                            {{nombre}}
+                        </button>
+                    {{/organizaciones}}
+                </ul>
+            </div>
+        </section>
+        <img id="img-ppal" src="/principal.png" alt="imagen-principal">
+    </div>
+{{/partial}}
+
+{{>layout.hbs}}

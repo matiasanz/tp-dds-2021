@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="/styles.css" rel="stylesheet">
+    <link rel="icon" href="/huella.ico">
+
+    {{#block "sources"}}
+    {{/block}}
+    {{# block "titulo" }}
+    {{/block}}
+</head>
+
+<body>
+    <header>
+        <img src="/logo.jpeg" class="logo" alt="logo-header">
+        <div class="topnav">
+            <nav>
+                <a href="localhost:9000/hogares-de-transito">Hogares de transito</a>
+            </nav>
+        </div>
+        {{#usuario}}
+            <p>{{nombre_real}} {{apellido}}</p>
+            <button onclick="window.location.replace('/logout')">Cerrar Sesión</button>
+        {{else}}
+            <form method="post" action="/login">
+                <input name="username" type="text" value="" placeholder="Usuario">
+                <input name="password" type="password" value="" placeholder="Contraseña">
+                <input type="submit" value="Iniciar Sesión">
+            </form>
+        {{/usuario}}
+
+    </header>
+    <div class="cuerpo">
+        <main>
+            {{# block "contenido" }}
+            {{/block}}
+        </main>
+
+        <footer>Copyright 2021 © Rescate de Patitas</footer>
+    </div>
+</body>
+
+</html>

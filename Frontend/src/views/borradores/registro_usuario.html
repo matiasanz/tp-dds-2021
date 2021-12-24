@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrarse</title>
+</head>
+<body>
+<div id="container">
+    <h1>Registrarse</h1>
+    <form>
+        <input type="text" id="fname" name="fname" placeholder="Nombre">
+        <input type="text" id="lname" name="lname" placeholder="Apellido"><br>
+        <input type="text" id="date" name="date" placeholder="Fecha de Nacimiento" onblur="this.type='text'" onfocus="this.type='date'">
+        <div>
+            <label for="dni-types">Tipo</label>
+            <select name="type" id="dni-types">
+                <option value="dni">DNI</option>
+                <option value="pasport">Pasaporte</option>
+            </select>
+            <input type="number" id="number" placeholder="Nro">
+        </div>
+        <input type="number" id="phone" name="phone" placeholder="Telefono">
+        <input type="email" id="mail" name="mail" placeholder="Mail"><br>
+        Notificarme vía<input type="checkbox" id="wpp" value="wpp">Whatsapp
+        <input type="checkbox" id="sms" value="sms">SMS
+        <input type="checkbox" id="email" value="mail">Email</br>
+
+        <h3>Contacto</h3>
+        <input type="text" id="contact-fname" name="contact-lname" placeholder="Nombre">
+        <input type="text" id="contact-lname" name="contact-fname" placeholder="Apellido"><br>
+        <input type="number" id="phone2" name="phone" placeholder="Telefono">
+        <input type="email" id="mail2" name="mail" placeholder="Mail"><br>
+        Notificarme vía<input type="checkbox" id="wpp2" value="wpp">Whatsapp
+        <input type="checkbox" id="sms2" value="sms">SMS
+        <input type="checkbox" id="email2" value="mail">Email</br>
+
+        <input type="button" id="close" value="Cancelar">
+        <input type="submit" id="accept" value="Aceptar">
+    </form>
+
+</div>
+</body>
+</html>

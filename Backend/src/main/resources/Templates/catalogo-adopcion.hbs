@@ -1,0 +1,41 @@
+{{#partial "titulo"}}
+    <title>Quiero Adoptar</title>
+{{/partial}}
+
+
+{{#partial "sources"}}
+{{/partial}}
+
+{{#partial "contenido"}}
+    <h1>Mascotas en Adopción</h1>
+    <ul>
+        {{#publicaciones}}
+            <li> Mascota #{{id}}
+                {{#mascotaPublicada}}
+                    <h4>{{nombre}}</h4>
+                    <ul>
+                        <li><strong>Nombre:</strong> {{nombre}}</li>
+                        <li><strong>Apodo:</strong> {{apodo}}</li>
+                        <li><strong>Edad Aproximada:</strong> {{edadAproximada}}</li>
+                        <li><strong>Descripcion:</strong> {{descripcion}}</li>
+                        <li><strong>Especie:</strong> {{especie}}  </li>
+                        <li><strong>Preguntas al dueño:</strong>
+                            <ul>
+                                {{#each respuestasAPreguntas}}
+                                    <li>
+                                        <strong>¿{{@key}}?</strong> {{this}}
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                    </ul>
+                {{/mascotaPublicada}}
+            </li>
+        {{else}}
+            <p>Actualmente, ninguna mascota se encuentra en adopción, o en condiciones de ser publicada</p>
+        {{/publicaciones}}
+    </ul>
+
+{{/partial}}
+
+{{>layout.hbs}}

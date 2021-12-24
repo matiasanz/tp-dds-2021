@@ -1,0 +1,36 @@
+.boton_accion, .boton_resaltado{
+    border: #36b08b 2px solid;
+    border-radius: 0.5em;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+}
+
+.boton_accion {
+    color: white;
+    background-color: #36b08b;
+    margin-left: 5px;
+}
+
+.boton_resaltado {
+    color: #36b08b;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.boton_resaltado:hover, .boton_accion:hover{
+    background-color: #20e2d7;
+    color: #434343;
+    font-weight: bold;
+    animation: shadow-pulse 1000ms 1;
+}
+
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(32, 226, 215, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 8px 16px rgba(32, 226, 215, 0);
+    }
+}

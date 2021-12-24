@@ -1,0 +1,36 @@
+{{#partial "titulo"}}
+    <title>Adoptantes</title>
+{{/partial}}
+
+
+{{#partial "sources"}}
+{{/partial}}
+
+{{#partial "contenido"}}
+    <h1>Publicaciones de Adoptantes</h1>
+    <ul>
+        {{#publicaciones}}
+            <li> Aspirante #{{id}}
+                {{#aspirante}}
+                    <strong>{{nombre}} {{apellido}}</strong>
+                    <ul>
+                        <li><strong>Preferencias:</strong>
+                            <ul>
+                                {{#each ../preferencias}}
+                                    <li>
+                                        <strong>¿{{@key}}?</strong> {{this}}
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                    </ul>
+                {{/aspirante}}
+            </li>
+        {{else}}
+            <p>Momentáneamente no hay ninguna publicación de este tipo, o al menos aprobada</p>
+        {{/publicaciones}}
+    </ul>
+
+{{/partial}}
+
+{{>layout.hbs}}

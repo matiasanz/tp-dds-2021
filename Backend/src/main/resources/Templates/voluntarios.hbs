@@ -1,0 +1,90 @@
+{{#partial "titulo"}}
+    <title>Voluntarios</title>
+{{/partial}}
+
+
+{{#partial "sources"}}
+{{/partial}}
+
+{{#partial "contenido"}}
+    <div>
+        <h1>Menú Voluntarios</h1>
+
+        <section>
+            <h2>Aspirantes a Adoptantes</h2>
+            {{#adoptantes}}
+                <h3>Adoptante #{{id}}</h3>
+                <form method="post" action="/organizaciones/{{../idOrg}}/adoptantes/{{id}}">
+                    <select name="aprobada">
+                        <option selected hidden disabled >Calificación...</option>
+                        <option value="true">Aprobada</option>
+                        <option value="false">Rechazada</option>
+                    </select>
+
+                    <input type="submit" value="Confirmar Decisión">
+                </form>
+                {{#aspirante}}
+                    <ul>
+                        <li>
+                            <strong>Nombre Completo:</strong> {{nombre}} {{apellido}}
+                        </li>
+                        <li>
+                            <strong>Preferencias Indicadas:</strong>
+                            <ul>
+                                {{#each preferencias}}
+                                <li>
+                                    <strong>¿{{@key}}?</strong> {{this}}
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                    </ul>
+                {{/aspirante}}
+                <hr>
+            {{else}}
+                <p>Momentáneamente no hay ninguna publicación de este tipo para validar</p>
+            {{/adoptantes}}
+        </section>
+
+        <section>
+            <h2>Mascotas en Adopción</h2>
+
+            {{#dadores}}
+                <h3>Mascota #{{id}}</h3>
+                <ul>
+                    {{#mascotaPublicada}}
+                        {{#duenio}}
+                            <li>
+                                <strong>Dueño:</strong> {{nombre}} {{apellido}}
+                            </li>
+                        {{/duenio}}
+                    {{/mascotaPublicada}}
+                    <li>
+                        <strong>Respuestas:</strong>
+                        <ul>
+                            {{#each respuestasAPreguntas}}
+                                <li>
+                                    <strong>¿{{@key}}?</strong> {{this}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                </ul>
+
+                <form method="post" action="/organizaciones/{{../../idOrg}}/catalogo-adopcion/{{id}}">
+                    <select name="aprobada">
+                        <option selected hidden disabled >Calificación...</option>
+                        <option value="true">Aprobada</option>
+                        <option value="false">Rechazada</option>
+                    </select>
+
+                    <input type="submit" value="Enviar">
+                </form>
+            {{else}}
+                <p>Momentáneamente no hay ninguna publicación de este tipo para validar</p>
+            {{/dadores}}
+        </section>
+    </div>
+{{/partial}}
+
+{{>layout.hbs}}

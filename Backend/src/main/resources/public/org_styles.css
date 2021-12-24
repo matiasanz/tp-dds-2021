@@ -1,0 +1,60 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ededed;
+    height: 100%;
+}
+
+.btn-org{
+    font-family: 'Montserrat', sans-serif;
+    display:inline-block;
+    color: #0c9db3;
+    border: 1px solid #0c9db3;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 10px 25px 10px 25px;
+    background-color: #ededed;
+    margin-bottom: 20px;
+    width: 200px;
+}
+#titulo{
+    font-size: 2.5rem;
+}
+
+h1 {
+    color: #36b08b;
+    text-align: center;
+}
+h2 {
+    margin-top: 1.5em;
+    color: #36b08b;
+    text-align: left;
+}
+h3 {
+    color: #444444;
+    text-align: left;
+    margin-bottom: 20px;
+}
+#divisionUl {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 50px;
+}
+#columnasOrg {
+    text-align: center;
+    margin-top: 0;
+    columns: 3 200px;
+    column-rule: 2px dotted #138D75;
+}
+#columnas{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-org:hover {
+    background-color: #d3d3d3;
+    text-decoration: underline;
+}
+
+#img-ppal{
+    height: 40em;
+}
