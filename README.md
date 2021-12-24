@@ -1,6 +1,6 @@
 # TP de DDS Grupo 9
 
-![build](/actions/workflows/tests_backend.yml/badge.svg)
+![build](https://github.com/matiasanz/tp-dds-2021/actions/workflows/tests_backend.yml/badge.svg)
 
 ## Integrantes:  
 * Anzorandía, Matías.
