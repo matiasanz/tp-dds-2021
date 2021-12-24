@@ -1,6 +1,11 @@
 name: JUnit
 
-on: [push]
+on: 
+  push:
+    branches:
+     - master
+    paths:
+     - '**'
 
 jobs:
   junit:
