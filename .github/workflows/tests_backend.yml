@@ -21,43 +21,30 @@ jobs:
         
         run: |
           powershell
-
           $path = "src/main/resources/META-INF/persistence.xml"
           [xml] $file = get-content($path)
-
           #Lo que sigue es por el 'xmlns' (xml namespace)
           $nameSpaceTable = new-object Xml.XmlNamespaceManager $file.NameTable
           $nameSpaceTable.AddNamespace("per", "http://java.sun.com/xml/ns/persistence")
-
           function with_name{
           	param([string] $name)
           	$file.SelectSingleNode("//per:property[@name='$name']", $nameSpaceTable)
           }
-
           function hibernate_connection{
           	param([string] $name)
           	with_name("hibernate.connection.$name")
           }
-
           $node = hibernate_connection("driver_class")
           $node.value="org.hsqldb.jdbcDriver"
-
           $node = hibernate_connection("url")
           $node.value="jdbc:hsqldb:mem:app-db"
-
           $node = hibernate_connection("username")
           $node.value="sa"
-
           $node = hibernate_connection("password")
           $node.value=""
-
-
           $node = with_name("hibernate.dialect")
           $node.value="org.hibernate.dialect.HSQLDialect"
-
           $file.Save($path)
-
           exit
-
       - name: Correr Tests
         run: mvn --batch-mode --update-snapshots verify
